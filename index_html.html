@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio 9X - Creative Photo Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image1" alt="Studio 9X Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Studio 9X</h1>
+            <p>Creative Photo Studio</p>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>
+                Welcome to Studio 9X! I am a passionate photographer specializing in creative and modern photography. My goal is to capture unique moments and tell visual stories through my lens. Explore my work below and feel free to get in touch!
+            </p>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400" alt="Sample 1">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400" alt="Sample 2">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400" alt="Sample 3">
+                <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?w=400" alt="Sample 4">
+            </div>
+            <p class="gallery-note">Add your own photos by replacing these images in the HTML.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></a>
+                <a href="#" aria-label="Facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Twitter"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Studio 9X. All rights reserved.</p>
+    </footer>
+</body>
+</html>
