@@ -43,6 +43,31 @@ document.querySelector('.arrow-right').addEventListener('click', () => {
   updateHero();
 });
 
+// Swipe support for mobile (iOS/Android)
+let touchStartX = null;
+let touchEndX = null;
+const heroContainer = document.querySelector('.hero-image-container');
+heroContainer.addEventListener('touchstart', function(e) {
+  if (e.touches.length === 1) touchStartX = e.touches[0].clientX;
+});
+heroContainer.addEventListener('touchmove', function(e) {
+  if (e.touches.length === 1) touchEndX = e.touches[0].clientX;
+});
+heroContainer.addEventListener('touchend', function() {
+  if (touchStartX !== null && touchEndX !== null) {
+    if (touchEndX < touchStartX - 50) {
+      current = (current + 1) % images.length;
+      updateHero();
+    }
+    if (touchEndX > touchStartX + 50) {
+      current = (current - 1 + images.length) % images.length;
+      updateHero();
+    }
+  }
+  touchStartX = null;
+  touchEndX = null;
+});
+
 // SPA Navigation
 function showSection(sectionId) {
   const sections = [
@@ -71,7 +96,7 @@ updateHero();
 
 // Fade-In on Scroll
 function handleScrollFadeIn() {
-  const fadeEls = document.querySelectorAll('.fadein-on-scroll');
+  const fadeEls = document.querySelectorAll('.fadein-on-scroll, .feature');
   fadeEls.forEach(el => {
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight - 40) {
