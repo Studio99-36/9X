@@ -1,29 +1,24 @@
 // Hero-Slider mit 5 Slides (Logo + 4 Bilder)
 const images = [
   {
-    src: "images/Studio 9X Graublau Weiß Minimalistisch Geometrisch Technik Quadrat Logo.png",
-    title: "STUDIO 9X",
-    subtitle: "CREATIVE PHOTO STUDIO"
+    src: "1.png",
+    showLogo: true
   },
   {
     src: "images/image00030.jpeg",
-    title: "STUDIO 9X",
-    subtitle: "CREATIVE PHOTO STUDIO"
+    showLogo: false
   },
   {
     src: "images/Deslit Stephen smiling.jpg",
-    title: "STUDIO 9X",
-    subtitle: "CREATIVE PHOTO STUDIO"
+    showLogo: false
   },
   {
     src: "images/whatsapp-image-2.jpg",
-    title: "STUDIO 9X",
-    subtitle: "CREATIVE PHOTO STUDIO"
+    showLogo: false
   },
   {
     src: "images/image00031.jpeg",
-    title: "STUDIO 9X",
-    subtitle: "CREATIVE PHOTO STUDIO"
+    showLogo: false
   }
 ];
 
@@ -31,13 +26,14 @@ let current = 0;
 
 function updateHero() {
   const img = document.querySelector('.hero-bg');
-  const title = document.querySelector('.hero-title');
-  const subtitle = document.querySelector('.hero-subtitle');
+  const logo = document.querySelector('.hero-logo-center');
   img.src = images[current].src;
-  title.textContent = images[current].title;
-  subtitle.textContent = images[current].subtitle;
+  if (images[current].showLogo) {
+    logo.style.display = "block";
+  } else {
+    logo.style.display = "none";
+  }
 }
-
 document.querySelector('.arrow-left').addEventListener('click', () => {
   current = (current - 1 + images.length) % images.length;
   updateHero();
@@ -49,7 +45,6 @@ document.querySelector('.arrow-right').addEventListener('click', () => {
 
 // SPA Navigation
 function showSection(sectionId) {
-  // Alle Sections
   const sections = [
     document.getElementById('hero-section'),
     document.getElementById('about'),
@@ -72,3 +67,18 @@ document.querySelectorAll('.back-btn').forEach(btn => {
 });
 // On load: nur Hero anzeigen
 showSection('hero-section');
+updateHero();
+
+// Fade-In on Scroll
+function handleScrollFadeIn() {
+  const fadeEls = document.querySelectorAll('.fadein-on-scroll');
+  fadeEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 40) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', handleScrollFadeIn);
+window.addEventListener('resize', handleScrollFadeIn);
+window.addEventListener('DOMContentLoaded', handleScrollFadeIn);
