@@ -1,46 +1,45 @@
 // Hero-Slider mit 5 Slides (Logo + 4 Bilder)
 const images = [
-  {
-    src: "1.png",
-    showLogo: true
-  },
-  {
-    src: "images/image00030.jpeg",
-    showLogo: false
-  },
-  {
-    src: "images/Deslit Stephen smiling.jpg",
-    showLogo: false
-  },
-  {
-    src: "images/whatsapp-image-2.jpg",
-    showLogo: false
-  },
-  {
-    src: "images/image00031.jpeg",
-    showLogo: false
-  }
+  { src: "1.png" },
+  { src: "images/image00030.jpeg" },
+  { src: "images/Deslit Stephen smiling.jpg" },
+  { src: "images/whatsapp-image-2.jpg" },
+  { src: "images/image00031.jpeg" }
 ];
 
 let current = 0;
+let sliderInterval = null;
 
 function updateHero() {
   const img = document.querySelector('.hero-bg');
-  const logo = document.querySelector('.hero-logo-center');
   img.src = images[current].src;
-  if (images[current].showLogo) {
-    logo.style.display = "block";
-  } else {
-    logo.style.display = "none";
-  }
 }
-document.querySelector('.arrow-left').addEventListener('click', () => {
-  current = (current - 1 + images.length) % images.length;
-  updateHero();
-});
-document.querySelector('.arrow-right').addEventListener('click', () => {
+
+function nextSlide() {
   current = (current + 1) % images.length;
   updateHero();
+}
+function prevSlide() {
+  current = (current - 1 + images.length) % images.length;
+  updateHero();
+}
+
+// Auto-Slideshow alle 3 Sekunden
+function startAutoSlide() {
+  if (sliderInterval) clearInterval(sliderInterval);
+  sliderInterval = setInterval(() => {
+    nextSlide();
+  }, 3000);
+}
+
+// Arrow button handlers
+document.querySelector('.arrow-left').addEventListener('click', () => {
+  prevSlide();
+  startAutoSlide();
+});
+document.querySelector('.arrow-right').addEventListener('click', () => {
+  nextSlide();
+  startAutoSlide();
 });
 
 // Swipe support for mobile (iOS/Android)
@@ -56,12 +55,12 @@ heroContainer.addEventListener('touchmove', function(e) {
 heroContainer.addEventListener('touchend', function() {
   if (touchStartX !== null && touchEndX !== null) {
     if (touchEndX < touchStartX - 50) {
-      current = (current + 1) % images.length;
-      updateHero();
+      nextSlide();
+      startAutoSlide();
     }
     if (touchEndX > touchStartX + 50) {
-      current = (current - 1 + images.length) % images.length;
-      updateHero();
+      prevSlide();
+      startAutoSlide();
     }
   }
   touchStartX = null;
@@ -90,9 +89,10 @@ document.querySelectorAll('.back-btn').forEach(btn => {
     showSection(btn.getAttribute('data-section'));
   });
 });
-// On load: nur Hero anzeigen
+
 showSection('hero-section');
 updateHero();
+startAutoSlide();
 
 // Fade-In on Scroll
 function handleScrollFadeIn() {
