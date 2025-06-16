@@ -107,3 +107,13 @@ function handleScrollFadeIn() {
 window.addEventListener('scroll', handleScrollFadeIn);
 window.addEventListener('resize', handleScrollFadeIn);
 window.addEventListener('DOMContentLoaded', handleScrollFadeIn);
+
+// Impressum Toggle
+const impressumToggle = document.querySelector('.impressum-toggle');
+const impressumContent = document.getElementById('impressum-content');
+impressumToggle.addEventListener('click', function() {
+    const isOpen = !impressumContent.classList.contains('hidden');
+    impressumContent.classList.toggle('hidden');
+    impressumToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    if (!isOpen) impressumContent.focus();
+});
