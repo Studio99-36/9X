@@ -408,13 +408,34 @@ footer {
   margin-top: 3rem;
   letter-spacing: 0.04em;
 }
-.impressum {
+.impressum-wrapper {
   margin-top: 1.2rem;
+}
+.impressum-toggle {
+  background: none;
+  border: none;
+  color: #bbb;
+  font-size: 1.07rem;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+.impressum-toggle:hover, .impressum-toggle:focus {
+  color: #fff;
+}
+.impressum {
   color: #bbb;
   font-size: 0.98rem;
   background: #181818;
   padding: 1rem 0.5rem;
   border-radius: 5px;
+  margin-top: 0.5rem;
+  transition: all 0.3s;
+  display: block;
+}
+.impressum.hidden {
+  display: none !important;
 }
 .hidden {
   display: none !important;
