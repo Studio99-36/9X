@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="1.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -39,10 +39,11 @@
     <!-- ═══════════════════════════════ HOME ═══════════════════════════════ -->
     <div id="home" class="page active">
 
-      <!-- HERO: Vollbild-Slider -->
+      <!-- HERO: Vollbild-Slider — inkl. Comedy-Bild -->
       <section class="hero" id="hero">
         <div class="hero-slides" id="hero-slides">
           <div class="hero-slide active" style="background-image: url('images/image00035.jpeg')"></div>
+          <div class="hero-slide" style="background-image: url('images/image00031.jpeg')"></div>
           <div class="hero-slide" style="background-image: url('images/Deslit Stephen smiling.jpg')"></div>
           <div class="hero-slide" style="background-image: url('images/image00048.jpeg')"></div>
           <div class="hero-slide" style="background-image: url('images/image00031.jpeg')"></div>
@@ -52,7 +53,7 @@
         <div class="hero-content">
           <p class="hero-eyebrow reveal-fade">Berlin · Creative Space</p>
           <h1 class="hero-title reveal-fade" style="--delay: 0.1s">STUDIO<br><em>9X</em></h1>
-          <p class="hero-sub reveal-fade" style="--delay: 0.2s">Coworking · Foto · Pop‑up · Events</p>
+          <p class="hero-sub reveal-fade" style="--delay: 0.2s">Coworking · Foto · Pop‑up · Events · Comedy</p>
         </div>
         <div class="hero-scroll-cue">
           <span>SCROLL</span>
@@ -102,15 +103,36 @@
           </article>
           <article class="feature-card reveal-fade" style="--delay: 0.24s">
             <div class="feature-num">04</div>
-            <h3>Private Events</h3>
-            <p>Ob Geburtstag, Lesung oder After-Work-Hangout — das Studio wird Gastgeber für bleibende Erinnerungen.</p>
+            <h3>Comedy Shows</h3>
+            <p>Live-Comedy im Studio — zusammen mit unserem Partner <strong>SKoa Comedy</strong>. Berliner Humor, echte Bühne, unvergessliche Abende.</p>
           </article>
         </div>
       </section>
 
-      <!-- FULLBLEED IMAGE BREAK 2 -->
-      <div class="fullbleed-image tall" style="background-image: url('images/image00035.jpeg')">
+      <!-- ══ COMEDY SEKTION ══ -->
+      <section class="comedy-section flow-section">
+        <div class="comedy-inner">
+          <div class="comedy-text reveal-fade">
+            <span class="section-label">Partner</span>
+            <h2>SKoa Comedy<br><em>Live im Studio</em></h2>
+            <p>Studio 9X ist Heimat für Live-Comedy. In Kooperation mit <strong>SKoa Comedy</strong> finden regelmäßig Stand-up Shows, Open Mics und Comedy Nights direkt im Studio statt — roh, direkt, Berliner Realness.</p>
+            <p>Kleine Bühne, große Energie. Kein Filter.</p>
+          </div>
+          <div class="comedy-media reveal-fade" style="--delay: 0.15s">
+            <div class="comedy-video-wrap">
+              <video controls playsinline poster="images/skoa-comedy-1.jpg">
+                <source src="images/skoa-comedy-show.mp4" type="video/mp4">
+                Dein Browser unterstützt das Video-Tag nicht.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FULLBLEED IMAGE BREAK 2 — Comedy Atmosphäre -->
+      <div class="fullbleed-image tall" style="background-image: url('images/skoa-comedy-2.jpg')">
         <div class="fullbleed-quote reveal-fade">
+          <div class="comedy-badge">SKoa Comedy × Studio 9X</div>
           <blockquote>"Berlin noch kulturreicher,<br>cooler und spannender machen."</blockquote>
         </div>
       </div>
@@ -129,11 +151,13 @@
         </div>
       </section>
 
-      <!-- PHOTO STRIP -->
+      <!-- PHOTO STRIP — inkl. Comedy-Bilder -->
       <div class="photo-strip" id="photo-strip">
         <div class="strip-track" id="strip-track">
+          <img src="images/skoa-comedy-1.jpg" alt="">
           <img src="images/Deslit Stephen smiling.jpg" alt="">
           <img src="images/whatsapp-image-2.jpg" alt="">
+          <img src="images/skoa-comedy-2.jpg" alt="">
           <img src="images/image00031.jpeg" alt="">
           <img src="images/WhatsApp Bild 2025-04-28 um 17.45.32_8759eb46.jpg" alt="">
           <img src="images/image00048.jpeg" alt="">
@@ -141,10 +165,10 @@
           <img src="images/Deslit, Obeds girl.jpg" alt="">
           <img src="images/Deslit, Stephen vibing.jpg" alt="">
           <!-- Dupliziert für nahtlosen Loop -->
+          <img src="images/skoa-comedy-1.jpg" alt="">
           <img src="images/Deslit Stephen smiling.jpg" alt="">
           <img src="images/whatsapp-image-2.jpg" alt="">
-          <img src="images/image00031.jpeg" alt="">
-          <img src="images/WhatsApp Bild 2025-04-28 um 17.45.32_8759eb46.jpg" alt="">
+          <img src="images/skoa-comedy-2.jpg" alt="">
         </div>
       </div>
 
@@ -167,6 +191,7 @@
           <p>Wir sind ein kreatives Studio, das sich auf die Organisation von Pop-up-Events und kulturellen Veranstaltungen spezialisiert. Hinter Studio 9X stehen gebürtige Berliner, die ihre Stadt lieben und sie mit neuen Ideen, Formaten und Begegnungen bereichern wollen.</p>
           <p>Mit einem Gespür für Trends und einem Herz für Vielfalt schaffen wir Räume für Austausch und Inspiration. Jedes Event erzählt seine eigene Geschichte und bringt kreative Köpfe zusammen.</p>
           <p>Wir glauben daran, dass Kultur dort entsteht, wo Menschen sich begegnen — und genau dafür gestalten wir unsere Formate. Studio 9X ist mehr als ein Ort — es ist ein Gefühl, ein Kollektiv, eine Einladung, Berlin neu zu erleben.</p>
+          <p>In Zusammenarbeit mit <strong>SKoa Comedy</strong> bringen wir Live-Comedy direkt ins Studio — für Abende, die man so schnell nicht vergisst.</p>
         </div>
         <div class="about-image reveal-fade" style="--delay: 0.15s">
           <img src="images/Deslit, Stephen vibing.jpg" alt="Studio 9X Team" loading="lazy">
@@ -188,15 +213,17 @@
       <section class="gallery-section flow-section">
         <div class="masonry-grid">
           <div class="masonry-item reveal-fade"><img src="images/Deslit Stephen smiling.jpg" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.05s"><img src="images/whatsapp-image-2.jpg" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.1s"><img src="images/image00031.jpeg" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.15s"><img src="images/WhatsApp Bild 2025-04-28 um 17.45.32_8759eb46.jpg" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.2s"><img src="images/chatgpt-image-1.png" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.25s"><img src="images/image00048.jpeg" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.3s"><img src="images/image00035.jpeg" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.35s"><img src="images/Deslit, Obeds girl.jpg" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.4s"><img src="images/Deslit, Stephen vibing.jpg" alt="" loading="lazy"></div>
-          <div class="masonry-item reveal-fade" style="--delay: 0.45s"><img src="images/whatsapp-image-4.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.05s"><img src="images/skoa-comedy-1.jpg" alt="SKoa Comedy Night" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.1s"><img src="images/whatsapp-image-2.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.15s"><img src="images/skoa-comedy-2.jpg" alt="SKoa Comedy Show" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.2s"><img src="images/image00031.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.25s"><img src="images/WhatsApp Bild 2025-04-28 um 17.45.32_8759eb46.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.3s"><img src="images/chatgpt-image-1.png" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.35s"><img src="images/image00048.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.4s"><img src="images/image00035.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.45s"><img src="images/Deslit, Obeds girl.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.5s"><img src="images/Deslit, Stephen vibing.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.55s"><img src="images/whatsapp-image-4.jpg" alt="" loading="lazy"></div>
         </div>
       </section>
     </div>
@@ -241,7 +268,9 @@
         </div>
       </section>
     </div>
-    <!-- end #contact --></main>
+    <!-- end #contact -->
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">

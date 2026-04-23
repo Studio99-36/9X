@@ -3,7 +3,7 @@
    Light-first, Minimalist Creative Space
    ═══════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@400;500;600&display=swap');
 
 /* ── Tokens ── */
 :root, [data-theme="light"] {
@@ -17,7 +17,7 @@
   --color-accent: #1a1814;
   --color-accent-hover: #3d3a34;
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
 
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -256,7 +256,7 @@ em { font-style: italic; }
 }
 .hero-title {
   font-size: var(--text-hero);
-  font-weight: 300;
+  font-weight: 900;
   line-height: 0.9;
   color: #fff;
   letter-spacing: -0.02em;
@@ -264,7 +264,7 @@ em { font-style: italic; }
 }
 .hero-title em {
   font-style: italic;
-  font-weight: 300;
+  font-weight: 700;
 }
 .hero-sub {
   font-family: var(--font-body);
@@ -350,11 +350,11 @@ section + .fullbleed-image { margin-top: 0; }
 .section-label.light { color: rgba(255,255,255,0.6); }
 h2 {
   font-size: var(--text-2xl);
-  font-weight: 300;
+  font-weight: 700;
   color: var(--color-text);
   margin-bottom: var(--space-6);
 }
-h2 em { color: var(--color-text-muted); }
+h2 em { color: var(--color-text-muted); font-weight: 700; font-style: italic; }
 
 /* ══════════════════════════════════════════════
    REVEAL ANIMATIONS
@@ -425,7 +425,7 @@ h2 em { color: var(--color-text-muted); }
 .fullbleed-quote blockquote {
   font-family: var(--font-display);
   font-size: var(--text-xl);
-  font-weight: 300;
+  font-weight: 700;
   font-style: italic;
   color: #fff;
   line-height: 1.4;
@@ -469,6 +469,66 @@ h2 em { color: var(--color-text-muted); }
   color: var(--color-text-muted);
   line-height: 1.75;
   max-width: 100%;
+}
+
+/* ══════════════════════════════════════════════
+   COMEDY SECTION
+══════════════════════════════════════════════ */
+.comedy-section {
+  background: var(--color-surface);
+  max-width: 100%;
+  padding-inline: 0;
+}
+.comedy-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(var(--space-12), 8vw, var(--space-24));
+  align-items: center;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding-block: clamp(var(--space-16), 10vw, var(--space-32));
+  padding-inline: clamp(var(--space-6), 6vw, var(--space-24));
+}
+.comedy-text h2 { margin-bottom: var(--space-6); }
+.comedy-text p {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.85;
+  margin-bottom: var(--space-4);
+}
+.comedy-text strong { color: var(--color-text); font-weight: 600; }
+.comedy-video-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.comedy-video-wrap video {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  background: #111;
+}
+.comedy-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-6);
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.1);
+}
+@media (max-width: 900px) {
+  .comedy-inner { grid-template-columns: 1fr; }
+  .comedy-video-wrap video { aspect-ratio: 16/9; }
 }
 
 /* ══════════════════════════════════════════════
@@ -561,7 +621,7 @@ h2 em { color: var(--color-text-muted); }
 .about-lead {
   font-family: var(--font-display);
   font-size: var(--text-xl);
-  font-weight: 300;
+  font-weight: 700;
   font-style: italic;
   color: var(--color-text);
   line-height: 1.35;
