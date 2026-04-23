@@ -1,119 +1,139 @@
-// Hero-Slider mit 5 Slides (Logo + 4 Bilder)
-const images = [
-  { src: "1.png" },
-  { src: "images/image00030.jpeg" },
-  { src: "images/Deslit Stephen smiling.jpg" },
-  { src: "images/whatsapp-image-2.jpg" },
-  { src: "images/image00031.jpeg" }
-];
+/* ═══════════════════════════════════════════════════════
+   STUDIO 9X — Script
+   ═══════════════════════════════════════════════════════ */
 
-let current = 0;
-let sliderInterval = null;
+// ── Dark Mode Toggle ──
+(function () {
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  const moonIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+  const sunIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
 
-function updateHero() {
-  const img = document.querySelector('.hero-bg');
-  img.src = images[current].src;
-}
+  let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', theme);
+  if (toggle) toggle.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
 
-function nextSlide() {
-  current = (current + 1) % images.length;
-  updateHero();
-}
-function prevSlide() {
-  current = (current - 1 + images.length) % images.length;
-  updateHero();
-}
-
-// Auto-Slideshow alle 3 Sekunden
-function startAutoSlide() {
-  if (sliderInterval) clearInterval(sliderInterval);
-  sliderInterval = setInterval(() => {
-    nextSlide();
-  }, 3000);
-}
-
-// Arrow button handlers
-document.querySelector('.arrow-left').addEventListener('click', () => {
-  prevSlide();
-  startAutoSlide();
-});
-document.querySelector('.arrow-right').addEventListener('click', () => {
-  nextSlide();
-  startAutoSlide();
-});
-
-// Swipe support for mobile (iOS/Android)
-let touchStartX = null;
-let touchEndX = null;
-const heroContainer = document.querySelector('.hero-image-container');
-heroContainer.addEventListener('touchstart', function(e) {
-  if (e.touches.length === 1) touchStartX = e.touches[0].clientX;
-});
-heroContainer.addEventListener('touchmove', function(e) {
-  if (e.touches.length === 1) touchEndX = e.touches[0].clientX;
-});
-heroContainer.addEventListener('touchend', function() {
-  if (touchStartX !== null && touchEndX !== null) {
-    if (touchEndX < touchStartX - 50) {
-      nextSlide();
-      startAutoSlide();
-    }
-    if (touchEndX > touchStartX + 50) {
-      prevSlide();
-      startAutoSlide();
-    }
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      toggle.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+      toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+    });
   }
-  touchStartX = null;
-  touchEndX = null;
-});
+})();
 
-// SPA Navigation
-function showSection(sectionId) {
-  const sections = [
-    document.getElementById('hero-section'),
-    document.getElementById('about'),
-    document.getElementById('gallery'),
-    document.getElementById('contact')
-  ];
-  sections.forEach(sec => sec.classList.add('hidden'));
-  document.getElementById(sectionId).classList.remove('hidden');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+// ── SPA Navigation ──
+const pages = document.querySelectorAll('.page');
+const navBtns = document.querySelectorAll('.nav-btn');
+
+function showPage(id) {
+  pages.forEach(p => p.classList.remove('active'));
+  navBtns.forEach(b => b.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Re-trigger reveal for newly shown sections
+    setTimeout(checkReveal, 100);
+  }
+  navBtns.forEach(b => {
+    if (b.getAttribute('data-section') === id) b.classList.add('active');
+  });
 }
-document.querySelectorAll('.nav-btn').forEach(btn => {
+
+navBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    showSection(btn.getAttribute('data-section'));
-  });
-});
-document.querySelectorAll('.back-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    showSection(btn.getAttribute('data-section'));
+    showPage(btn.getAttribute('data-section'));
+    // Close mobile menu
+    navLinksEl.classList.remove('open');
+    hamburger.classList.remove('open');
   });
 });
 
-showSection('hero-section');
-updateHero();
-startAutoSlide();
+showPage('home');
 
-// Fade-In on Scroll
-function handleScrollFadeIn() {
-  const fadeEls = document.querySelectorAll('.fadein-on-scroll, .feature');
-  fadeEls.forEach(el => {
+// ── Mobile Hamburger ──
+const hamburger = document.getElementById('hamburger');
+const navLinksEl = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinksEl.classList.toggle('open');
+});
+
+// ── Header scroll effect ──
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ── Hero Slider ──
+const slides = document.querySelectorAll('.hero-slide');
+const dotsContainer = document.getElementById('hero-dots');
+let currentSlide = 0;
+let slideTimer;
+
+// Build dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', `Slide ${i + 1}`);
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+});
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  document.querySelectorAll('.hero-dot')[currentSlide]?.classList.remove('active');
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+  document.querySelectorAll('.hero-dot')[currentSlide]?.classList.add('active');
+}
+
+function startSlider() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(() => goToSlide(currentSlide + 1), 4500);
+}
+
+startSlider();
+
+// Touch swipe on hero
+const heroEl = document.querySelector('.hero');
+let touchX = null;
+heroEl.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+heroEl.addEventListener('touchend', e => {
+  if (touchX === null) return;
+  const dx = e.changedTouches[0].clientX - touchX;
+  if (Math.abs(dx) > 50) {
+    goToSlide(currentSlide + (dx < 0 ? 1 : -1));
+    startSlider();
+  }
+  touchX = null;
+}, { passive: true });
+
+// ── Scroll Reveal ──
+function checkReveal() {
+  const els = document.querySelectorAll('.page.active .reveal-fade:not(.visible)');
+  const vp = window.innerHeight;
+  els.forEach(el => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 40) {
-      el.classList.add('visible');
-    }
+    if (rect.top < vp - 60) el.classList.add('visible');
   });
 }
-window.addEventListener('scroll', handleScrollFadeIn);
-window.addEventListener('resize', handleScrollFadeIn);
-window.addEventListener('DOMContentLoaded', handleScrollFadeIn);
 
-// Impressum Toggle
+window.addEventListener('scroll', checkReveal, { passive: true });
+window.addEventListener('resize', checkReveal, { passive: true });
+checkReveal();
+
+// ── Impressum Toggle ──
 const impressumToggle = document.querySelector('.impressum-toggle');
 const impressumContent = document.getElementById('impressum-content');
-impressumToggle.addEventListener('click', function() {
-    const isOpen = !impressumContent.classList.contains('hidden');
-    impressumContent.classList.toggle('hidden');
-    impressumToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    if (!isOpen) impressumContent.focus();
-});
+if (impressumToggle && impressumContent) {
+  impressumToggle.addEventListener('click', () => {
+    const open = !impressumContent.classList.contains('hidden');
+    impressumContent.classList.toggle('hidden', open);
+    impressumToggle.setAttribute('aria-expanded', String(!open));
+    if (!open) impressumContent.focus();
+  });
+}

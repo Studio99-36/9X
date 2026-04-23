@@ -1,149 +1,274 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Studio 9X - Creative Studio</title>
-    <link rel="icon" type="image/png" href="1.png">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Studio 9X — Creative Studio Berlin</title>
+  <link rel="icon" type="image/png" href="1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><button class="nav-btn" data-section="hero-section">Startseite</button></li>
-                <li><button class="nav-btn" data-section="about">About Me</button></li>
-                <li><button class="nav-btn" data-section="gallery">Gallery</button></li>
-                <li><button class="nav-btn" data-section="contact">Contact</button></li>
-            </ul>
-        </nav>
-        <div class="logo logo-topright">
-            <img src="1.png" alt="Studio 9X Logo">
-        </div>
-    </header>
-    <main>
-        <!-- HERO SLIDER -->
-        <section id="hero-section" class="hero-section">
-            <div class="hero-slider">
-                <button class="arrow arrow-left" aria-label="Vorheriges Bild">&#8592;</button>
-                <div class="hero-image-container">
-                    <img class="hero-bg" src="1.png" alt="Hero Slide">
-                    <div class="hero-overlay">
-                        <h1 class="hero-title">STUDIO 9X</h1>
-                        <h2 class="hero-subtitle">CREATIVE PHOTO STUDIO</h2>
-                    </div>
-                </div>
-                <button class="arrow arrow-right" aria-label="Nächstes Bild">&#8594;</button>
-                <div class="scroll-indicator">
-                    <span>SCROLL</span>
-                    <div class="scroll-line"></div>
-                </div>
-            </div>
-            <div class="hero-scroll-content">
-                <h2 class="fadein-on-scroll">Willkommen im Studio 9X</h2>
-                <p class="fadein-on-scroll">
-                    Ein Ort, der mehr sein will als nur vier Wände – mitten im pulsierenden Berlin.
-                </p>
-                <div class="feature-list">
-                    <div class="feature fadein-on-scroll">
-                        <h3>Coworking Space</h3>
-                        <p>
-                            Hier treffen sich Kreative, Freelancer:innen und Ideenmenschen. Lässiges Arbeiten mit gutem Kaffee und Atmosphäre, die inspiriert, ohne Druck. Platz zum Denken, Netzwerken, einfach Sein.
-                        </p>
-                    </div>
-                    <div class="feature fadein-on-scroll">
-                        <h3>Fotosessions</h3>
-                        <p>
-                            Urbaner Hintergrund, viel Licht und Raum für deine Visionen – perfekt fürs nächste Fotoshooting, Video-Projekt oder Content-Date. Technik ist bei Bedarf schnell organisiert.
-                        </p>
-                    </div>
-                    <div class="feature fadein-on-scroll">
-                        <h3>Pop‑up Store</h3>
-                        <p>
-                            Dein Label, deine Kollektion, für kurze Zeit mitten im Kiez. Locker, spannend, immer mit ein bisschen Berliner Energie – so, wie du es dir vorstellst.
-                        </p>
-                    </div>
-                    <div class="feature fadein-on-scroll">
-                        <h3>Private Events</h3>
-                        <p>
-                            Ob Geburtstag, Lesung oder After‑Work‑Hangout – das Studio wird zum Gastgeber für vertraute Runden und bleibende Erinnerungen. Mal entspiegelt, mal kunstvoll.
-                        </p>
-                    </div>
-                </div>
-                <h2 class="projects-title fadein-on-scroll">Projects</h2>
-                <div class="projects-video fadein-on-scroll">
-                    <video controls poster="1.png" style="width:100%;max-width:720px;border-radius: 12px;box-shadow: 0 2px 18px #0008;">
-                        <source src="Deslit Performance mit Song.mov" type="video/mp4">
-                        Dein Browser unterstützt das Video-Tag nicht.
-                    </video>
-                </div>
-            </div>
-        </section>
 
-        <!-- ABOUT -->
-        <section id="about" class="about hidden">
-            <button class="back-btn" data-section="hero-section">Zurück zur Startseite</button>
-            <h2>About Me</h2>
-            <p>
-                Vom einfachen Späti zum Hotspot der Berliner Kultur – das ist die Vision von Studio 9X.<br>
-                Wir sind ein kreatives Studio, das sich auf die Organisation von Pop-up-Events und kulturellen Veranstaltungen spezialisiert.<br>
-                Hinter Studio 9X stehen gebürtige Berliner, die ihre Stadt lieben und sie mit neuen Ideen, Formaten und Begegnungen bereichern wollen.<br>
-                Unser Ziel: Berlin noch kulturreicher, cooler und spannender machen – für alle, die hier leben, und für alle, die zu Besuch sind.<br><br>
-                Mit einem Gespür für Trends und einem Herz für Vielfalt schaffen wir Räume für Austausch und Inspiration.<br>
-                Jedes Event erzählt seine eigene Geschichte und bringt kreative Köpfe zusammen.<br>
-                Wir glauben daran, dass Kultur dort entsteht, wo Menschen sich begegnen – und genau dafür gestalten wir unsere Formate.<br>
-                Studio 9X ist mehr als ein Ort – es ist ein Gefühl, ein Kollektiv, eine Einladung, Berlin neu zu erleben.
-            </p>
-        </section>
-
-        <!-- GALLERY -->
-        <section id="gallery" class="gallery hidden">
-            <button class="back-btn" data-section="hero-section">Zurück zur Startseite</button>
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <img src="1.png" alt="Logo">
-                <img src="images/image00030.jpeg" alt="Bild 2">
-                <img src="images/Deslit Stephen smiling.jpg" alt="Bild 3">
-                <img src="images/whatsapp-image-2.jpg" alt="Bild 4">
-                <img src="images/image00031.jpeg" alt="Bild 5">
-                <img src="images/WhatsApp Bild 2025-04-28 um 17.45.32_8759eb46.jpg" alt="Bild 6">
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="contact hidden">
-            <button class="back-btn" data-section="hero-section">Zurück zur Startseite</button>
-            <h2>Contact</h2>
-            <form class="contact-form" action="mailto:info.amos.shop@gmail.com" method="POST" enctype="text/plain">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Nachricht</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                <button type="submit">Senden</button>
-            </form>
-            <div class="social-links">
-                <a href="https://www.instagram.com/studio.9x?igsh=aHF2bDc2bHoybHR6&utm_source=qr" aria-label="Instagram" target="_blank">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-                </a>
-            </div>
-        </section>
-    </main>
-    <footer>
-    <p>&copy; 2025 Studio 9X. All rights reserved.</p>
-    <div class="impressum-wrapper">
-        <button class="impressum-toggle" aria-expanded="false" aria-controls="impressum-content">Impressum anzeigen</button>
-        <div id="impressum-content" class="impressum hidden" tabindex="-1">
-            <strong>Impressum</strong><br>
-            Geschäftsführer: Ben Andrews Rumler<br>
-            Adresse: Oranienstr 47<br>
-            Telefon: +4915 565167612<br>
-            E-Mail: <a href="mailto:contact@studio9x.de">contact@studio9x.de</a>
-        </div>
+  <!-- NAV -->
+  <header class="site-header" id="site-header">
+    <div class="nav-logo">
+      <img src="1.png" alt="Studio 9X">
+      <span>STUDIO 9X</span>
     </div>
-</footer>
-    <script src="script.js"></script>
+    <nav class="nav-links" id="nav-links">
+      <button class="nav-btn active" data-section="home">Startseite</button>
+      <button class="nav-btn" data-section="about">About</button>
+      <button class="nav-btn" data-section="gallery">Gallery</button>
+      <button class="nav-btn" data-section="contact">Contact</button>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Dark Mode umschalten">
+        <!-- Moon icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════ HOME ═══════════════════════════════ -->
+    <div id="home" class="page active">
+
+      <!-- HERO: Vollbild-Slider -->
+      <section class="hero" id="hero">
+        <div class="hero-slides" id="hero-slides">
+          <div class="hero-slide active" style="background-image: url('images/image00047.jpeg')"></div>
+          <div class="hero-slide" style="background-image: url('images/image00050.jpeg')"></div>
+          <div class="hero-slide" style="background-image: url('images/image00063.jpeg')"></div>
+          <div class="hero-slide" style="background-image: url('images/image00030.jpeg')"></div>
+          <div class="hero-slide" style="background-image: url('images/Deslit Stephen smiling.jpg')"></div>
+        </div>
+        <div class="hero-veil"></div>
+        <div class="hero-content">
+          <p class="hero-eyebrow reveal-fade">Berlin · Creative Space</p>
+          <h1 class="hero-title reveal-fade" style="--delay: 0.1s">STUDIO<br><em>9X</em></h1>
+          <p class="hero-sub reveal-fade" style="--delay: 0.2s">Coworking · Foto · Pop‑up · Events</p>
+        </div>
+        <div class="hero-scroll-cue">
+          <span>SCROLL</span>
+          <div class="cue-line"></div>
+        </div>
+        <div class="hero-dots" id="hero-dots"></div>
+      </section>
+
+      <!-- INTRO: Text + Bild nebeneinander, kein Hintergrund -->
+      <section class="intro flow-section">
+        <div class="intro-text reveal-fade">
+          <span class="section-label">Was wir sind</span>
+          <h2>Mehr als vier Wände —<br><em>ein Gefühl.</em></h2>
+          <p>Mitten im pulsierenden Berlin entsteht ein Ort für Kreative, Freelancer:innen und Ideenmenschen. Studio 9X ist Arbeitsplatz, Bühne und Treffpunkt zugleich.</p>
+        </div>
+        <div class="intro-image reveal-fade" style="--delay: 0.15s">
+          <img src="images/whatsapp-image-2.jpg" alt="Studio 9X Atmosphäre" loading="lazy">
+        </div>
+      </section>
+
+      <!-- FULLBLEED IMAGE BREAK 1 -->
+      <div class="fullbleed-image" style="background-image: url('images/image00031.jpeg')">
+        <div class="fullbleed-caption">Oranienstr. 47 · Berlin</div>
+      </div>
+
+      <!-- FEATURES -->
+      <section class="features flow-section">
+        <div class="features-header reveal-fade">
+          <span class="section-label">Was wir bieten</span>
+          <h2>Raum für deine<br><em>Ideen</em></h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card reveal-fade" style="--delay: 0s">
+            <div class="feature-num">01</div>
+            <h3>Coworking Space</h3>
+            <p>Lässiges Arbeiten mit gutem Kaffee und Atmosphäre, die inspiriert. Platz zum Denken, Netzwerken, einfach Sein.</p>
+          </article>
+          <article class="feature-card reveal-fade" style="--delay: 0.08s">
+            <div class="feature-num">02</div>
+            <h3>Fotosessions</h3>
+            <p>Urbaner Hintergrund, viel Licht und Raum für deine Visionen — perfekt fürs nächste Shooting, Video oder Content-Date.</p>
+          </article>
+          <article class="feature-card reveal-fade" style="--delay: 0.16s">
+            <div class="feature-num">03</div>
+            <h3>Pop‑up Store</h3>
+            <p>Dein Label, deine Kollektion — für kurze Zeit mitten im Kiez. Locker, spannend, immer mit Berliner Energie.</p>
+          </article>
+          <article class="feature-card reveal-fade" style="--delay: 0.24s">
+            <div class="feature-num">04</div>
+            <h3>Private Events</h3>
+            <p>Ob Geburtstag, Lesung oder After-Work-Hangout — das Studio wird Gastgeber für bleibende Erinnerungen.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- FULLBLEED IMAGE BREAK 2 -->
+      <div class="fullbleed-image tall" style="background-image: url('images/image00035.jpeg')">
+        <div class="fullbleed-quote reveal-fade">
+          <blockquote>"Berlin noch kulturreicher,<br>cooler und spannender machen."</blockquote>
+        </div>
+      </div>
+
+      <!-- PROJECTS / VIDEO -->
+      <section class="projects flow-section">
+        <div class="projects-header reveal-fade">
+          <span class="section-label">Projekte</span>
+          <h2>Live aus dem<br><em>Studio</em></h2>
+        </div>
+        <div class="projects-video reveal-fade" style="--delay: 0.12s">
+          <video controls poster="1.png" playsinline>
+            <source src="Deslit Performance mit Song.mov" type="video/mp4">
+            Dein Browser unterstützt das Video-Tag nicht.
+          </video>
+        </div>
+      </section>
+
+      <!-- PHOTO STRIP: horizontale Bildleiste -->
+      <div class="photo-strip" id="photo-strip">
+        <div class="strip-track" id="strip-track">
+          <img src="images/image00030.jpeg" alt="">
+          <img src="images/Deslit Stephen smiling.jpg" alt="">
+          <img src="images/whatsapp-image-2.jpg" alt="">
+          <img src="images/image00031.jpeg" alt="">
+          <img src="images/WhatsApp Bild 2025-04-28 um 17.45.32_8759eb46.jpg" alt="">
+          <img src="images/image00047.jpeg" alt="">
+          <img src="images/image00048.jpeg" alt="">
+          <img src="images/image00050.jpeg" alt="">
+          <!-- Dupliziert für nahtlosen Loop -->
+          <img src="images/image00030.jpeg" alt="">
+          <img src="images/Deslit Stephen smiling.jpg" alt="">
+          <img src="images/whatsapp-image-2.jpg" alt="">
+          <img src="images/image00031.jpeg" alt="">
+        </div>
+      </div>
+
+    </div>
+    <!-- end #home -->
+
+    <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+    <div id="about" class="page">
+      <section class="page-hero" style="background-image: url('images/image00063.jpeg')">
+        <div class="page-hero-veil"></div>
+        <div class="page-hero-content reveal-fade">
+          <span class="section-label light">Über uns</span>
+          <h1>About<br><em>Studio 9X</em></h1>
+        </div>
+      </section>
+
+      <section class="about-body flow-section">
+        <div class="about-text reveal-fade">
+          <p class="about-lead">Vom einfachen Späti zum Hotspot der Berliner Kultur — das ist die Vision von Studio 9X.</p>
+          <p>Wir sind ein kreatives Studio, das sich auf die Organisation von Pop-up-Events und kulturellen Veranstaltungen spezialisiert. Hinter Studio 9X stehen gebürtige Berliner, die ihre Stadt lieben und sie mit neuen Ideen, Formaten und Begegnungen bereichern wollen.</p>
+          <p>Mit einem Gespür für Trends und einem Herz für Vielfalt schaffen wir Räume für Austausch und Inspiration. Jedes Event erzählt seine eigene Geschichte und bringt kreative Köpfe zusammen.</p>
+          <p>Wir glauben daran, dass Kultur dort entsteht, wo Menschen sich begegnen — und genau dafür gestalten wir unsere Formate. Studio 9X ist mehr als ein Ort — es ist ein Gefühl, ein Kollektiv, eine Einladung, Berlin neu zu erleben.</p>
+        </div>
+        <div class="about-image reveal-fade" style="--delay: 0.15s">
+          <img src="images/Deslit, Stephen vibing.jpg" alt="Studio 9X Team" loading="lazy">
+        </div>
+      </section>
+    </div>
+    <!-- end #about -->
+
+    <!-- ═══════════════════════════════ GALLERY ═══════════════════════════════ -->
+    <div id="gallery" class="page">
+      <section class="page-hero" style="background-image: url('images/image00048.jpeg')">
+        <div class="page-hero-veil"></div>
+        <div class="page-hero-content reveal-fade">
+          <span class="section-label light">Bilder</span>
+          <h1>Gallery</h1>
+        </div>
+      </section>
+
+      <section class="gallery-section flow-section">
+        <div class="masonry-grid">
+          <div class="masonry-item reveal-fade"><img src="images/image00030.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.05s"><img src="images/Deslit Stephen smiling.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.1s"><img src="images/whatsapp-image-2.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.15s"><img src="images/image00031.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.2s"><img src="images/WhatsApp Bild 2025-04-28 um 17.45.32_8759eb46.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.25s"><img src="images/chatgpt-image-1.png" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.3s"><img src="images/image00047.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.35s"><img src="images/image00048.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.4s"><img src="images/image00050.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.45s"><img src="images/image00063.jpeg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.5s"><img src="images/Deslit, Obeds girl.jpg" alt="" loading="lazy"></div>
+          <div class="masonry-item reveal-fade" style="--delay: 0.55s"><img src="images/Deslit, Stephen vibing.jpg" alt="" loading="lazy"></div>
+        </div>
+      </section>
+    </div>
+    <!-- end #gallery -->
+
+    <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+    <div id="contact" class="page">
+      <section class="page-hero" style="background-image: url('images/image00035.jpeg')">
+        <div class="page-hero-veil"></div>
+        <div class="page-hero-content reveal-fade">
+          <span class="section-label light">Schreib uns</span>
+          <h1>Contact</h1>
+        </div>
+      </section>
+
+      <section class="contact-section flow-section">
+        <div class="contact-info reveal-fade">
+          <h2>Lass uns<br><em>reden.</em></h2>
+          <p>Du hast Interesse an einem Shooting, einer Kooperation oder willst einfach mal vorbeischauen? Schreib uns.</p>
+          <div class="contact-details">
+            <div><span>Adresse</span><p>Oranienstr. 47, Berlin</p></div>
+            <div><span>E-Mail</span><p><a href="mailto:contact@studio9x.de">contact@studio9x.de</a></p></div>
+            <div><span>Instagram</span><p><a href="https://www.instagram.com/studio.9x?igsh=aHF2bDc2bHoybHR6&utm_source=qr" target="_blank" rel="noopener">@studio.9x</a></p></div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-fade" style="--delay: 0.12s">
+          <form class="contact-form" action="mailto:info.amos.shop@gmail.com" method="POST" enctype="text/plain">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required placeholder=" ">
+              <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required placeholder=" ">
+              <label for="email">E-Mail</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+              <label for="message">Nachricht</label>
+            </div>
+            <button type="submit" class="btn-send">Senden →</button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <!-- end #contact -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="1.png" alt="Studio 9X Logo">
+        <span>STUDIO 9X</span>
+      </div>
+      <p class="footer-copy">&copy; 2025 Studio 9X. All rights reserved.</p>
+      <div class="footer-impressum">
+        <button class="impressum-toggle" aria-expanded="false" aria-controls="impressum-content">Impressum</button>
+        <div id="impressum-content" class="impressum hidden" tabindex="-1">
+          <strong>Impressum</strong><br>
+          Geschäftsführer: Ben Andrews Rumler<br>
+          Adresse: Oranienstr 47<br>
+          Telefon: +4915 565167612<br>
+          E-Mail: <a href="mailto:contact@studio9x.de">contact@studio9x.de</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
